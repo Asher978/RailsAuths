@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+    has_many :monsters
 
     validates_presence_of :username
     validates :username, length: (6..15), uniqueness: true
