@@ -1,0 +1,9 @@
+<h1>Create a Monster</h1>
+<% form_for @monster do |f| %>
+    <%= f.text_field :name, placeholder: 'Name' %>
+    <br>
+    <%= form.text_area :description, placeholder: 'Description' %>
+  
+    <br>
+    <%= submit_tag 'Create monster!' %>
+<% end %>

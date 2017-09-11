@@ -21,4 +21,10 @@ class ApplicationController < ActionController::Base
     User.find_by(session_token: token)
   end
 
+  def ensure_logged_in
+    return if current_user
+    flash[:error] = "you need to log in"
+    redirect_to session_path
+  end
+
 end
