@@ -1,5 +1,10 @@
 class User < ApplicationRecord
 
+    validates_presence_of :username
+    validates :username, length: (6..15), uniqueness: true
+
+    validates :password, length: (6..20), allow_nil: true
+
     attr_reader :password
 
     def self.find_by_credentials(username, password)
